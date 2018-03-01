@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Benoit Delhaye</title>
+    <meta name="description" content="Benoit Delhaye's Web Page">
+    <meta name="author" content="Benoit Delhaye">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      ol {
+        counter-reset: list;
+      }
+      ol > li {
+        list-style: none;
+        position: relative;
+      }
+      ol > li:before {
+        content: "[" counter(list) "] ";
+        counter-increment: list;
+        position: absolute;
+        left: -1.4em;
+      }
+      li{
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="well well-lg">
+      <div class="row">
+        <div class="col-sm-2">
+          <img class="img-rounded img-responsive" src="media/me.jpg" alt="me" />
+        </div>
+        <div class="col-sm-8">
+          <h2>Benoit Delhaye, PhD <br>
+          <small>Postdoc Scholar<br>
+          University of Chicago</small>
+          </h2>
+        </div>
+        <div class="col-sm-2">
+        <a href="https://twitter.com/delhayeben" class="twitter-follow-button" data-show-count="false">Twitter</a>
+        <a style="display:inline-block;background-color:#FC4C02;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href='http://strava.com/athletes/3833356/badge' target="_clean" >
+          Follow me
+        </a>
+
+        </div>
+        </div>
+      </div>  <!-- well well-lg -->
+      <div class="row">
+        <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked" id="tabbar">
+          <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+          <li><a data-toggle="tab" href="#publi">Publications</a></li>
+          <li><a data-toggle="tab" href="#news">News Archive</a></li>
+          <li><a data-toggle="tab" href="#matlab">Matlab</a></li>
+          <li><a data-toggle="tab" href="#running">Running</a></li>
+          <li><a data-toggle="tab" href="#contact">Contact</a></li>
+          <li><a data-toggle="tab" href="#climate">Climate</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-10">
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <div class="row">
+                  <div class="col-sm-7">
+                    <h3> About me </h3>
+                    <p>I am currently a Post-Doctoral scholar at the Bensmaia Lab at the University of Chicago.
+                    I graduated as a Electro-mechanical engineer from Université catholique de Louvain (BS 2007, MS 2009)
+                    and I received a PhD in applied science (2014) from the same university for my work entitled
+                    "Skin mechanics involved in dynamic touch", this work was co-supervised by Jean-Louis Thonnard and Phillipe Lefèvre.
+                    My research interests include neuroprosthetics, haptics and neuroscience in the context of touch and sensory-motor control.
+                    During my free time, I like running (see <a href="#news" onclick="LoadRunning();return false">Running</a>),
+                    my favorite distances are half-marathon (1:23:40) and marathon (3:08:52).</p>
+                    <p id="cit_count"> This sentence should be replaced by the test citation count</p>
+                  </div>
+                  <div class="col-sm-5">
+                  <div class="well well-sm">
+                    <h3>Recent news</h3>
+                    <p id="recent_news"> This sentence should be replaced by the 10 first elements of news list</p>
+                    <p><a href="#news" onclick="LoadNews();return false"> See all </a></p>
+                  </div>
+                  </div>
+                </div>
+            </div>
+            <div id="publi" class="tab-pane fade">
+              <h3>Publications</h3>
+              <p id="publi_list"> This sentence should be replaced by the full publication list</p>
+            </div>
+            <div id="news" class="tab-pane fade">
+              <h3>News feed</h3>
+              <p id="news_list">This sentence should be replaced by the full news list</p>
+            </div>
+            <div id="matlab" class="tab-pane fade">
+              <h3>Matlab tools</h3>
+              <p>Some content in menu 2.</p>
+            </div>
+            <div id="running" class="tab-pane fade">
+                <br><br>
+                <div class="row">
+                  <div class="col-sm-7">
+                    I like to run, follow me on strava and let's share a run !
+                  </div>
+                  <div class="col-sm-5">
+                    <iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/3833356/latest-rides/6440d576073f14be5c8c1f6187ca84df22b36644'></iframe>
+                  </div>
+                </div>
+            </div>
+            <div id="contact" class="tab-pane fade">
+              <h3> Contact </h3>
+              <p>I am currently a post-doc scholar at University of Chicago, under supervision of Prof. Sliman Bensmaia.</p>
+              <p><b>Bensmaia Lab</b></p>
+
+              <p>1027 E. 57th Street <br>
+              Anatomy 100 <br>
+              Chicago, IL 60637</p>
+
+
+              <p>Office phone: (773) 834-5204 <br>
+              e-mail: delhayeben@gmail.com</p>
+
+            </div>
+            <div id="climate" class="tab-pane fade">
+              <h3>Climate</h3>
+              <p>Here is why I prefer Chicago's climate over Brussels'</p>
+              <div class="col-sm-6">
+                <center>
+                Chicago<br>
+                <a href="https://weather-and-climate.com/average-monthly-hours-Sunshine,Chicago,United-States-of-America"><img width="100%" border="0" alt="Average monthly sunhours in Chicago, United States of America" src="https://weather-and-climate.com/uploads/average-sunshine-united-states-of-america-chicago.png"></a>
+                <a href="https://weather-and-climate.com/average-monthly-Rainy-days,Chicago,United-States-of-America"><img width="100%" border="0" alt="Average rainy days (rain/snow) in  Chicago, United States of America" src="https://weather-and-climate.com/uploads/average-raindays-united-states-of-america-chicago.png"></a>
+                </center>
+              </div>
+              <div class="col-sm-6">
+                <center>
+                Brussels<br>
+                <a href="https://weather-and-climate.com/average-monthly-hours-Sunshine,Brussels,Belgium"><img width="100%" border="0" alt="Average monthly sunhours in Brussels, Belgium" src="https://weather-and-climate.com/uploads/average-sunshine-belgium-brussels.png"></a>
+                <a href="https://weather-and-climate.com/average-monthly-Rainy-days,Brussels,Belgium"><img width="100%" border="0" alt="Average rainy days (rain/snow) in  Brussels, Belgium" src="https://weather-and-climate.com/uploads/average-raindays-belgium-brussels.png"></a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div> <!-- column -->
+      </div> <!-- row -->
+    </div> <!-- container -->
+    <!-- Twitter script -->
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Altimetric badges -->
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+    <!-- load references from DOI -->
+    <script>
+      function undef(val,before,after) {
+        return (val == null) ? "" : before+val+after
+      }
+      var doi_list=["10.1073/pnas.1704856114",
+        "10.1016/j.jphysparis.2016.11.001",
+        "10.1126/scitranslmed.aaf5187",
+        "10.1109/TOH.2016.2573298",
+        "10.1098/rsif.2015.0874",
+        "10.1098/rsif.2014.0698",
+        "10.3389/fnbeh.2012.00037"];
+      var textphrase=[];
+      var xhttp =[];
+      for (i = 0; i < doi_list.length; i++) {
+        (function(i) {    // <--- the catch
+          xhttp[i]= new XMLHttpRequest();
+          xhttp[i].onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              textphrase[i]= "<li>";
+              //textphrase[i]+=JSON.stringify(obj);
+              for (key in obj.author) {
+                if(obj.author[key].family == "Delhaye") {
+                  textphrase[i]+="<u><b>"
+                }
+                textphrase[i]+= obj.author[key].family + " ";
+                textphrase[i]+= obj.author[key].given.match(/\b\w/g).join("");
+                if(obj.author[key].family == "Delhaye") {
+                  textphrase[i]+="</b></u>"
+                }
+                textphrase[i]+= ", ";
+              }
+              textphrase[i]=textphrase[i].slice(0,-2);
+              textphrase[i]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
+              textphrase[i]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
+              textphrase[i]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+              textphrase[i]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i] + "\" class=\"altmetric-embed\"></div>" + "<br>";
+
+              document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
+              _altmetric_embed_init();
+            }
+          };
+          xhttp[i].open("GET", "https://doi.org/"+doi_list[i],true);
+          xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
+          xhttp[i].send();
+        })(i);    // <---- (the i variable might be omitted if it's not needed)
+      }
+    </script>
+    <!-- citation count scopus -->
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("cit_count").innerHTML ="test"
+          display_news(this);
+        }
+      };
+      xhttp.open("GET", "https://api.elsevier.com/content/abstract/citation-count?doi=10.1073%2Fpnas.1704856114&apiKey=26973780f206e5e961f7a842bda9409d", true);
+      xhttp.setRequestHeader("Accept", "application/xml");
+      xhttp.send();
+    </script>
+    <!-- news feed -->
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("recent_news").innerHTML ="test"
+          display_news(this);
+        }
+      };
+      xhttp.open("GET", "media/news.xml", true);
+      xhttp.send();
+
+      function display_news(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var x = xmlDoc.getElementsByTagName("news");
+        textouput=[];
+        for (i = 0; i <x.length; i++) {
+          textouput[i]="<li>"
+          textouput[i]+="<b>"+x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue+"</b> ";
+          textouput[i]+=x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue;
+
+          y=x[i].getElementsByTagName("opt");
+          if(y!=null) {
+            textouput[i]+="<ul style=\"list-style-type:circle\">"
+            for (j = 0; j <y.length; j++) {
+              textouput[i]+="<li><small><i>" + y[j].childNodes[0].nodeValue + "</i></small>";
+            }
+            textouput[i]+="</ul>"
+          }
+        }
+        document.getElementById("recent_news").innerHTML = textouput.slice(0, 4).join("");
+        document.getElementById("news_list").innerHTML = "<ul>" + textouput.join("") + "</ul>";
+      }
+    </script>
+    <!-- Loading the right tab from external or when reloading or when clicking on links -->
+    <script>
+      // Javascript to enable link to tab
+      var url = document.location.toString();
+      if (url.match('#')) {
+          $('.nav-pills a[href="#' + url.split('#')[1] + '"]').tab('show');
+      }
+
+      // Change hash for page-reload
+      $('.nav-pills a').on('shown.bs.tab', function (e) {
+          window.location.hash = e.target.hash;
+      })
+
+      // Change tab with a href
+      function LoadNews() {$('#tabbar a[href="#news"]').tab('show');}
+      function LoadRunning() {$('#tabbar a[href="#running"]').tab('show');}
+    </script>
+
+  </body>
+</html>

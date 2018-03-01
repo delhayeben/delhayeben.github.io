@@ -1,0 +1,227 @@
+<!--
+   <news>
+      <date></date>
+      <content></content>
+      <opt></opt>
+   </news>
+ -->
+
+<doc>
+   <news>
+      <date>2017-10-20</date>
+      <content><![CDATA[On Nov 30-Dec 1, I'll be visiting <a href="pruszynskilab.com">Andrew Pruszynski</a> (University of Western Ontario, Canada).]]></content>
+      <opt>I'll give a talk at the computational neuroscience seminar series</opt>
+   </news>
+   <news>
+      <date>2017-10-02</date>
+      <content>Going to Brussels to visit Jean-Louis Thonnard and Phillipe Lefèvre and for the PhD thesis Defense of Allan Barrea.</content>
+      <opt>I'll give a talk about TouchSim as a part of a mini-symposium on  “Processing of somatosensory feedback for motor control ”.</opt>
+   </news>
+   <news>
+      <date>2017-09-25</date>
+      <content>Review back from Comprehensive Physiol: Lots of (good) comments.</content>
+   </news>
+   <news>
+      <date>2017-07-31</date>
+      <content>Review entitled "Neural basis of touch and proprioception in primate cortex" submitted to Comprehensive Physiology.</content>
+   </news>
+   <news>
+      <date>2017-07-11</date>
+      <content><![CDATA[TouchSim paper was highlighted in its <a href="http://www.pnas.org/content/114/28/7173.full#sec-4"> PNAS issue </a>]]></content>
+   </news>
+   <news>
+      <date>2017-09-25</date>
+      <content>Review back from Compr Phys: Lots of (good) comments.</content>
+   </news>
+   <news>
+      <date>2017-06-27</date>
+      <content><![CDATA[TouchSim code is online. Download it on <a href="http://bensmaialab.org/download/">Bensmaia Lab</a> website.]]></content>
+   </news>
+   <news>
+      <date>2017-06-26</date>
+      <content><![CDATA[TouchSim, our tool to simulate tactile signals from the whole hand, is out in <a href="http://www.pnas.org/content/114/28/E5693">PNAS</a>.]]></content>
+      <opt>Simulating tactile signals from the whole hand with millisecond precision (2017), Hannes P. Saal*, Benoit P. Delhaye*, Brandon C. Rayhaun, and Sliman J. Bensmaia.</opt>
+      <opt><![CDATA[The code will be soon online on <a href="http://bensmaialab.org">bensmaialab.org</a>]]></opt>
+   </news>
+   <news>
+      <date>2017-06-09</date>
+      <content> Worldhaptics 2017: best work in progress was awarded to Allan for his poster ! </content>
+   </news>
+   <news>
+      <date>2017-06-06</date>
+      <content> Worldhaptics 2017</content>
+      <opt>workshop: "Recent advances in modeling skin mechanics and tactile afferent responses".</opt>
+      <opt>I'm talking about: "TouchSim: Simulating tactile signals from the whole hand with millisecond precision".</opt>
+      <opt>main conference: Finger Pad Mechanics During Dexterous Object Manipulation (Work in progress, poster). Allan Barrea, Benoit Delhaye, Philippe Lefèvre, Jean-Louis Thonnard.</opt>
+   </news>
+   <news>
+      <date>2017-05-01</date>
+      <content> Model paper (TouchSim) accepted in PNAS pending minor revisions !!!!!! </content>
+   </news>
+   <news>
+      <date>2017-04-01</date>
+      <content><![CDATA[WorldHaptics workshop accepted ! More info on the <a href="https://sites.google.com/sheffield.ac.uk/wh2017/">dedicated website</a> !]]></content>
+   </news>
+   <news>
+      <date>2017-03-23</date>
+      <content>Model re-submitted to PNAS after huge revisions ! Finger crossed.</content>
+   </news>
+   <news>
+      <date>2017-03-19</date>
+      <content>Workshop proposal "Recent advances in modeling skin mechanics and tactile afferent responses" submitted for Worldhaptics 2017 in Munich!</content>
+   </news>
+   <news>
+      <date>2016-11-29</date>
+      <content>Model paper back from revision: reject but can re-submit (aka major rev).</content>
+   </news>
+   <news>
+      <date>2016-11-09</date>
+      <content>busy SFN this year:</content>
+      <opt>BP Delhaye, AI Weber, SJ Bensmaia, Decoding motion speed from the responses of tactile afferents (poster).</opt>
+      <opt>A Barrea, E Jarocka, P Lefèvre, JL Thonnard, BB Edin, BP Delhaye, Human tactile afferent responses to skin strain patterns caused by fingertip shearing (poster).</opt>
+      <opt>SJ Bensmaia, T Callier, HP Saal, BP Delhaye The dynamics of neural signals about contact pressure - implications for bionic hands (talk).</opt>
+      <opt>AK Suresh, BP Delhaye, HP Saal, SJ Bensmaia. Coding of edge orientation in afferent responses of macaques (poster).</opt>
+      <opt>EL Graczyk, MA Schiefer, HP Saal, BP Delhaye, SJ Bensmaia, DJ Tyler. Fascicular organization affects tactile sensation evoked from peripheral nerve cuff stimulation (poster).</opt>
+   </news>
+   <news>
+      <date>2016-11-02</date>
+      <content><![CDATA[The manifesto is online, <a href="http://www.sciencedirect.com/science/article/pii/S0928425716300237">check it</a> !]]></content>
+   </news>
+   <news>
+      <date>2016-11-01</date>
+      <content>Our manifesto on neuroprostheses design has just been accepted !</content>
+      <opt>Delhaye, B.P., Saal, H.P., Bensmaia, S.J. (in press). Key considerations in designing a somatosensory neuroprosthesis, Journal of Physiology – Paris.</opt>
+   </news>
+   <news>
+      <date>2016-10-26</date>
+      <content><![CDATA[Our STM paper is out <a href="http://stm.sciencemag.org/content/8/362/362ra142">check it</a> !]]></content>
+      <opt><![CDATA[And it is in the news <a href="https://www.altmetric.com/details/13060691/news">everywhere</a>!!]]> </opt>
+   </news>
+   <news>
+      <date>2016-10-25</date>
+      <content>"The Neural Basis of Perceived Intensity in Natural and Artificial Touch" (Emily Graczyk, Matthew Schiefer, Hannes Saal, Benoit Delhaye, Sliman Bensmaia and Dustin Tyler) to appear tomorrow in Science Translational Medecine ! We will make the cover, wait for it !</content>
+   </news>
+   <news>
+      <date>2016-10-17</date>
+      <content>Modeling paper under revision in PNAS... finger crossed.</content>
+   </news>
+   <news>
+      <date>2016-08-24</date>
+      <content><![CDATA[Robo-psychophysics paper online ! <a href="http://ieeexplore.ieee.org/document/7542177">Check it out!</a>]]></content>
+   </news>
+   <news>
+      <date>2016-07-28</date>
+      <content>Our collaboration study with CASE Western about perceived intensity in artificial touch accepted in Science Translational Medecine !</content>
+   </news>
+   <news>
+      <date>2016-05-18</date>
+      <content>Robo-psychophysics paper: accepted !</content>
+   </news>
+   <news>
+      <date>2016-03-23</date>
+      <content>Robo-psychophysics paper: minor rev !</content>
+   </news>
+   <news>
+      <date>2016-02-17</date>
+      <content><![CDATA[Strain paper is <a href="http://rsif.royalsocietypublishing.org/content/13/115/20150874">online</a>]]></content>
+   </news>
+   <news>
+      <date>2016-01-22</date>
+      <content>"Robo-Psychophysics: Extracting behaviorally relevant features from the output of sensors on a prosthetic finger" submitted to IEEE on Haptics.</content>
+   </news>
+   <news>
+      <date>2016-01-21</date>
+      <content>Strain paper accepted for publication in Journal of the Royal Society Interface !</content>
+   </news>
+   <news>
+      <date>2015-10-21</date>
+      <content>SFN poster presentations:</content>
+      <opt>Delhaye BP, Schluter EW, Johannes MS, Katyal KD, Tenore FV, Bensmaia SJ. What can bionic fingers tell us about objects? Extracting behaviorally relevant features from the output of sensors on prosthetic fingertips.</opt>
+      <opt>Delhaye BP, Saal HP, Rayhaun BC, Bensmaia SJ. A model that simulates the response of the somatosensory nerves to arbitrary spatio-temporal deformations of the skin of the hand.</opt>
+      <opt>Barrea A, Delhaye B, Lefèvre P, Thonnard JL. Perception of partial slips under tangential loading of the fingertip.</opt>
+   </news>
+   <news>
+      <date>2015-04-17</date>
+      <content>Strain paper submitted to Journal of the Royal Society Interface.  Finger crossed...</content>
+   </news>
+   <news>
+      <date>2015-01-17</date>
+      <content>Thesis submitted to the Eurohaptics 2014 best thesis award !</content>
+   </news>
+   <news>
+      <date>2015-01-09</date>
+      <content>I just arrived in Chicago !</content>
+   </news>
+   <news>
+      <date>2014-12-05</date>
+      <content>I will be moving to the US, in Chicago on Jan 9 ,2015. There, I will start a post-doc scholar at the Somatosensory Research Lab (hold by Prof. Sliman Bensmaia).</content>
+   </news>
+</doc>
+
+
+<!--
+   <news>
+      <date></date>
+      <content></content>
+      <opt></opt>
+   </news>
+
+Dec 05 (2014):
+Oct 22 (2014): A mini-symposium on touch will be organized on October 31 afternoon before my PhD defense ! More info HERE.  Everyone’s welcome !
+Oct 09 (2014): My thesis public defense will take place on October 31,2014 at 5.00pm at BARB94 (LLN).  Everyone’s welcome !
+Sept 24 (2014): first paper on fingertip mechanics is out
+Dynamics of fingertip contact during the onset of tangential slip
+Benoit Delhaye, Philippe Lefèvre, and Jean-Louis Thonnard
+J. R. Soc. Interface November 6, 2014 11 20140698; doi:10.1098/rsif.2014.0698 (open access)
+http://rsif.royalsocietypublishing.org/content/11/100/20140698.abstract
+Sept 19 (2014): Private defense succesfull…
+Aug 19 (2014): Thesis dissertation submitted to the jury !
+Aug 19 (2014): Paper accepted !
+July 1 (2014): Paper obout the dynamics of fingertip contact re-submitted to JRSI… substantial imporvements made… Fingers crossed.
+May 28 (2014): PhD private defense scheduled on September, 19th… Dissertation to be submitted one month before!
+Mar 24 (2014): Paper about the dynamics of fingertip contact rejected…But with a possibility to re-submit. Three over the four reviewers were optimistic and one needs to be convinced.  Nevertheless, all these good comments/critics will improve the manuscript :)
+Jan 22 (2014): Paper about the dynamics of fingertip contact during tangential slip submitted to Journal of the Royal Society Interface… Fingers crossed.
+Dec 13 (2013): dlmcell.m and cell2latex.m files were updated.  More options !
+Nov 9-13 (2013): Society for Neuroscience Annual Meeting 2013 @ San Diego :)
+Poster presentation:
+“Skin strain measurements of the fingertip under shearing stress.”
+Delhaye B., Lefèvre P., Thonnard J-L.
+Oct 28 – Nov 8 (2013): Our lab is participating in the 59th ESA parabolic flight campaign.  For the first time in my thesis, I’m not in… preparing an upcoming conference…
+July 29 (2013): I’m the proud father of a little boy ! Quentin is born in the evening !
+July 17 (2013) : I had the opportunity to attend the workshop on Early touch being organised by Jonathan Platkiewicz and Vincent Hayward as a sattelite event of CNS meeting 2013 (Paris).  It was a great day with very nice speakers and talks.
+June 25 (2013) : 12th Dutch Belgian Haptic Network Meeting in Leuven (Belgium).  I made an oral presentation : “Fingertip Behavior during Tangential Sliding Movements.” Delhaye B., Lefèvre P., Thonnard J-L.
+May 28 – June 07 (2013) : We participated in the 58th ESA parabolic flight campaign in Bordeaux.  A new isometric force production task was tested.
+Mar 05 (2013) : Matlabtricks -> Write now your cell arrays to PDF !
+Feb 11 (2013) : Matlabtricks -> Write a cell array of strings and numerics to a text file !
+Dec 4-14 (2012) : We participated in the second Joint European Partial-G Parabolic Flight Campaign in Bordeaux ! We walked on Mars and Moon for some minutes…
+Oct 11-17 (2012) : Society for Neuroscience Annual Meeting 2012 in New Orleans.
+Poster presentation:
+“Fingertip deformation during the onset of a tangential sliding movement.”
+Delhaye B., Lefèvre P., Thonnard J-L.
+Oct 01-04 (2012) : I participated as a subject in my first CNES Parabolic Flight Campaign in Bordeaux !  I received there the Yuri Badge attesting that I spent the same time than Yuri Gagarine in microgravity ! (190 parabola ~ 70 minutes)
+Aug 09 (2012) : Matlabtricks -> Some kind of pointers in Matlab ?
+Jul 13 (2012) : Matlabtricks -> Compiling and using Matlab Mex files in Ubuntu 12.04.
+June 19 (2012) : My first paper has been accepted for publication:
+Delhaye B, Hayward V, Lefèvre P and Thonnard J (2012). Texture-induced vibrations in the forearm during tactile exploration. Front. Behav. Neurosci. 6:37. doi: 10.3389/fnbeh.2012.00037
+June 19 (2012) : Matlabtricks -> Use bsxfun function !
+May 17-20 (2012) : Eurobot internationnal finals in France ! We finish at the 7th place in the qualification round and we are eliminated in the first round of the final table. Info and video on our website.  We won the jury’s price !
+May 14-25 (2012): I participated in the 56th ESA Parabolic Flight Campaign in Bordeaux !
+Apr 23 – 29 (2012) : Society for Neural Control of Movement (NCM) 22nd Annual Meeting.
+Oral presentation: “Tactile detection of slip: Fine characterization of fingertip deformation during the onset of slip.”
+Delhaye B., Lefèvre P., Thonnard J-L.
+Apr 14-15 (2012) : Our robotic club participated in the Eurobot nationnal Cup. We are Belgian Champions for the second consecutive time!
+Jan 27-28 (2012) : 20th Brussels Hand/Upper Limb International SymposiumOral presentation: “Tactile detection of slip: Fine characterization of fingertip deformation during the onset of slip.”
+Delhaye B., Lefèvre P., Thonnard J-L.
+Nov 15-25 (2011): I participated in the 55th ESA Parabolic Flight Campaign in Bordeaux !
+Jun 28 – Jul 3 (2011) : International Finals Eurobot Cup in Astrakhan ! We finish at the 14th place. More info on our website
+May 30-31 – Jun 01-10 (2011) : I participated in the first Joint European Partial-G Parabolic Flight Campaign in Bordeaux. We’ve walked on the moon !
+Apr 16-17 (2011) : Our robotic club (site in french)participated in the Eurobot nationnal Cup. We are Belgian Champions ! We will participate in the Eurobot international Cup in Russia !
+Feb 3-4 (2011) : 19th Brussels Hand/Upper Limb Internationnal Symposium: Sensation, Movement and Strength. Genval, Belgium.Oral presentation: “Textural vibrations in the forearm during tactile exploration”Delhaye B., Hayward V., Lefèvre P., Thonnard J-L.
+Jan 31 – Feb 1-2 (2011) : Active touch sensing Conference@ Kavli Royal Society Center, U.K.Poster: “Vibrations in the forearm during active touch of rough textures”Delhaye B., Hayward V., Lefèvre P., Thonnard J-L.
+Nov 12-18 (2010): Society for Neuroscience 2010 in San DiegoPoster: “Textural vibrations in the forearm during tactile exploration”Delhaye B., Hayward V., Lefèvre P., Thonnard J-L.
+Oct 12-20 (2010): I participated in the 53rd ESA Parabolic Flight Campaign in Bordeaux !
+July 12 (2010) : I went to the EuroHaptics 2010conference in Amsterdam from July 7 to July 10.
+April 27- May 7 (2010) : I participated in the 52nd ESA Parabolic Flight Campaign in Bordeaux.
+
+
+-->
