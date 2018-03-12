@@ -5,8 +5,12 @@
       <opt></opt>
    </news>
  -->
-
 <doc>
+  <news>
+      <date>2018-02-12</date>
+      <content>I have been awarded "meritorious service awards 2017" from IEEE Transaction on Haptics for my work as a reviewer.</content>
+      <opt><![CDATA[see <a href="https://www.computer.org/web/toh/meritorious">here</a> (will be soon updated).]]></opt>
+   </news>
    <news>
       <date>2018-02-20</date>
       <content>Two minor revisions, one (second round) major revision. Quite good news! More soon.</content>
