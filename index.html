@@ -207,6 +207,57 @@
          <!-- row -->
       </div>
       <!-- container -->
+
+      <!-- FIREBASE -->
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDovHt5ziEKZyvWhHO6Et8_tdOKv21leHk",
+          authDomain: "personalwebpage-aadb5.firebaseapp.com",
+          databaseURL: "https://personalwebpage-aadb5.firebaseio.com",
+          projectId: "personalwebpage-aadb5",
+          storageBucket: "personalwebpage-aadb5.appspot.com",
+          messagingSenderId: "1004430160498"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <!-- FIREBASE: news feed -->
+      <script>
+        var ref = firebase.database().ref('doc/news');
+
+        ref.on("value", function(snapshot) {
+          x=snapshot.val()
+          textouput=[];
+          for (i = 0; i <x.length; i++) {
+            textouput[i]="<li>"
+            textouput[i]+="<b>"+x[x.length-1-i].date+"</b> ";
+            textouput[i]+=x[x.length-1-i].content;
+
+            y=x[x.length-1-i].opt;
+            if(y!=null) {
+              textouput[i]+="<ul style=\"list-style-type:circle\">"
+              if (typeof y === 'string') {
+                textouput[i]+="<li><small><i>" + y + "</i></small>";
+              } else {
+                for (j = 0; j <y.length; j++) {
+                  textouput[i]+="<li><small><i>" + y[j] + "</i></small>";
+                }
+              }
+
+              textouput[i]+="</ul>"
+            }
+          }
+
+          document.getElementById("recent_news").innerHTML = textouput.slice(0, 4).join("");
+          document.getElementById("news_list").innerHTML = "<ul>" + textouput.join("") + "</ul>";
+
+        }, function (error) {
+           console.log("Error: " + error.code);
+        });
+
+      </script>
+
       <!-- Twitter script -->
       <script>window.twttr = (function(d, s, id) {
          var js, fjs = d.getElementsByTagName(s)[0],
@@ -282,7 +333,7 @@
          }
       </script>
       <!-- citation count scopus -->
-      <script>
+      <!-- <script>
          var xhttp = new XMLHttpRequest();
          xhttp.onreadystatechange = function() {
            if (this.readyState == 4 && this.status == 200) {
@@ -293,42 +344,9 @@
          xhttp.open("GET", "https://api.elsevier.com/content/abstract/citation-count?doi=10.1073%2Fpnas.1704856114&apiKey=26973780f206e5e961f7a842bda9409d", true);
          xhttp.setRequestHeader("Accept", "application/xml");
          xhttp.send();
-      </script>
-      <!-- news feed -->
-      <script>
-         var xhttp = new XMLHttpRequest();
-         xhttp.onreadystatechange = function() {
-           if (this.readyState == 4 && this.status == 200) {
-             document.getElementById("recent_news").innerHTML ="test"
-             display_news(this);
-           }
-         };
-         xhttp.open("GET", "media/news.xml", true);
-         xhttp.send();
+      </script> -->
 
-         function display_news(xml) {
-           var i;
-           var xmlDoc = xml.responseXML;
-           var x = xmlDoc.getElementsByTagName("news");
-           textouput=[];
-           for (i = 0; i <x.length; i++) {
-             textouput[i]="<li>"
-             textouput[i]+="<b>"+x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue+"</b> ";
-             textouput[i]+=x[i].getElementsByTagName("content")[0].childNodes[0].nodeValue;
 
-             y=x[i].getElementsByTagName("opt");
-             if(y!=null) {
-               textouput[i]+="<ul style=\"list-style-type:circle\">"
-               for (j = 0; j <y.length; j++) {
-                 textouput[i]+="<li><small><i>" + y[j].childNodes[0].nodeValue + "</i></small>";
-               }
-               textouput[i]+="</ul>"
-             }
-           }
-           document.getElementById("recent_news").innerHTML = textouput.slice(0, 4).join("");
-           document.getElementById("news_list").innerHTML = "<ul>" + textouput.join("") + "</ul>";
-         }
-      </script>
       <!-- Loading the right tab from external or when reloading or when clicking on links -->
       <script>
          // Javascript to enable link to tab
