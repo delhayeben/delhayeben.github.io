@@ -300,26 +300,27 @@
              xhttp[i].onreadystatechange = function() {
                if (this.readyState == 4 && this.status == 200) {
                  var obj = JSON.parse(this.responseText);
-                 textphrase[i]= "<li>";
-                 //textphrase[i]+=JSON.stringify(obj);
+                 var idx = doi_list.length-1-i;
+                 textphrase[idx]= "<li>";
+                 //textphrase[idx]+=JSON.stringify(obj);
                  for (key in obj.author) {
                    if(obj.author[key].family == "Delhaye") {
-                     textphrase[i]+="<u><b>"
+                     textphrase[idx]+="<u><b>"
                    }
-                   textphrase[i]+= obj.author[key].family + " ";
-                   textphrase[i]+= obj.author[key].given.match(/\b\w/g).join("");
+                   textphrase[idx]+= obj.author[key].family + " ";
+                   textphrase[idx]+= obj.author[key].given.match(/\b\w/g).join("");
                    if(obj.author[key].family == "Delhaye") {
-                     textphrase[i]+="</b></u>"
+                     textphrase[idx]+="</b></u>"
                    }
-                   textphrase[i]+= ", ";
+                   textphrase[idx]+= ", ";
                  }
-                 textphrase[i]=textphrase[i].slice(0,-2);
-                 textphrase[i]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
-                 textphrase[i]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
-                 textphrase[i]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
-                 textphrase[i]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i] + "\" class=\"altmetric-embed\"></div>" + "<br>";
+                 textphrase[idx]=textphrase[idx].slice(0,-2);
+                 textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
+                 textphrase[idx]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
+                 textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+                 textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i] + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
-                 document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.reverse().join("") + "</ol>";
+                 document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
                  _altmetric_embed_init();
                }
              };
