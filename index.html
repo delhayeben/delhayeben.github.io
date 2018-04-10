@@ -319,7 +319,7 @@
                  textphrase[i]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                  textphrase[i]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i] + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
-                 document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
+                 document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.reverse().join("") + "</ol>";
                  _altmetric_embed_init();
                }
              };
