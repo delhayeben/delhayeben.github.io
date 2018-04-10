@@ -284,19 +284,16 @@
       <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
       <!-- load references from DOI -->
       <script>
-         function undef(val,before,after) {
-           return (val == null) ? "" : before+val+after
-         }
-         var doi_list=["10.1088/1741-2552/aab790",
-           "10.1073/pnas.1704856114",
-           "10.1016/j.jphysparis.2016.11.001",
-           "10.1126/scitranslmed.aaf5187",
-           "10.1109/TOH.2016.2573298",
-           "10.1098/rsif.2015.0874",
-           "10.1098/rsif.2014.0698",
-           "10.3389/fnbeh.2012.00037"];
-         var textphrase=[];
-         var xhttp =[];
+        function undef(val,before,after) {
+          return (val == null) ? "" : before+val+after
+        }
+
+        var ref = firebase.database().ref('doc/publi');
+        ref.on("value", function(snapshot) {
+          var doi_list=snapshot.val()
+
+          var textphrase=[];
+          var xhttp =[];
          for (i = 0; i < doi_list.length; i++) {
            (function(i) {    // <--- the catch
              xhttp[i]= new XMLHttpRequest();
@@ -331,6 +328,9 @@
              xhttp[i].send();
            })(i);    // <---- (the i variable might be omitted if it's not needed)
          }
+       }, function (error) {
+           console.log("Error: " + error.code);
+        });
       </script>
       <!-- citation count scopus -->
       <!-- <script>
