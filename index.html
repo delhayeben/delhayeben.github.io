@@ -301,7 +301,7 @@
                if (this.readyState == 4 && this.status == 200) {
                  var obj = JSON.parse(this.responseText);
                  var idx = doi_list.length-1-i;
-                 textphrase[idx]= "<li value=\"" + idx + "\">";
+                 textphrase[idx]= "<li value=\"" + i + "\">";
                  //textphrase[idx]+=JSON.stringify(obj);
                  for (key in obj.author) {
                    if(obj.author[key].family == "Delhaye") {
