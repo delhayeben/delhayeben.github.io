@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-18156303-3');
     </script>
     <!-- Required meta tags -->
@@ -57,7 +56,7 @@
            </div>
            <div class="col-sm-2">
               <a href="https://twitter.com/delhayeben" class="twitter-follow-button" data-show-count="false">Twitter</a>
-              <a style="display:inline-block;background-color:#FC4C02;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/3833356/badge' target="_clean" >
+              <a style="display:inline-block;background-color:#FC4C02;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('https://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/3833356/badge' target="_clean" >
               Follow me
               </a>
            </div>
@@ -295,8 +294,7 @@
 
       var ref = firebase.database().ref('doc/publi');
       ref.on("value", function(snapshot) {
-        var doi_list=snapshot.val()
-
+        var doi_list=snapshot.val();
         var textphrase=[];
         var xhttp =[];
        for (i = 0; i < doi_list.length; i++) {
@@ -307,29 +305,34 @@
                var obj = JSON.parse(this.responseText);
                var idx = doi_list.length-1-i;
                textphrase[idx]= "<li>";
+               if(doi_list[i].opt!=null & doi_list[i].opt=="cofirst") {
+                var cofirst=1;
+               } else {
+                var cofirst=0;
+               }
                //textphrase[idx]+=JSON.stringify(obj);
                for (key in obj.author) {
-                 if(obj.author[key].family == "Delhaye") {
-                   textphrase[idx]+="<u><b>"
-                 }
+                 var me = obj.author[key].family == "Delhaye";
+                 if(me) {textphrase[idx]+="<u><b>";}
                  textphrase[idx]+= obj.author[key].family + " ";
                  textphrase[idx]+= obj.author[key].given.match(/\b\w/g).join("");
-                 if(obj.author[key].family == "Delhaye") {
-                   textphrase[idx]+="</b></u>"
-                 }
+                 if((key == 0 | me) & cofirst) {textphrase[idx]+="*";}
+                 if(me) {textphrase[idx]+="</b></u>";}
                  textphrase[idx]+= ", ";
                }
+
+               if(cofirst) {var eqcontr="*, equal contribution";} else {var eqcontr="";}
                textphrase[idx]=textphrase[idx].slice(0,-2);
-               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
+               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + eqcontr+ "). <br> "
                textphrase[idx]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
-               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i] + "\" class=\"altmetric-embed\"></div>" + "<br>";
+               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
                document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
                _altmetric_embed_init();
              }
            };
-           xhttp[i].open("GET", "https://doi.org/"+doi_list[i],true);
+           xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
            xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
            xhttp[i].send();
          })(i);    // <---- (the i variable might be omitted if it's not needed)
