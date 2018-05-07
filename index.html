@@ -321,9 +321,9 @@
                  textphrase[idx]+= ", ";
                }
 
-               if(cofirst) {var eqcontr="*, equal contribution";} else {var eqcontr="";}
                textphrase[idx]=textphrase[idx].slice(0,-2);
-               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + eqcontr+ "). <br> "
+               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
+               if(cofirst) {textphrase[idx]+="(*, equal contribution) <br>";}
                textphrase[idx]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
