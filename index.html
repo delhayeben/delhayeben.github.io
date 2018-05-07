@@ -323,7 +323,7 @@
 
                textphrase[idx]=textphrase[idx].slice(0,-2);
                textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + "). <br> "
-               if(cofirst) {textphrase[idx]+="(*, equal contribution) <br>";}
+               if(cofirst) {textphrase[idx]+="(* equal contribution) <br>";}
                textphrase[idx]+= "<em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
@@ -342,18 +342,18 @@
       });
     </script>
     <!-- citation count scopus -->
-    <!-- <script>
+    <script>
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("cit_count").innerHTML ="test"
-          display_news(this);
+          //document.getElementById("cit_count").innerHTML =this.responseText;
+          console.log(this.responseText);
         }
       };
-      xhttp.open("GET", "https://api.elsevier.com/content/abstract/citation-count?doi=10.1073%2Fpnas.1704856114&apiKey=26973780f206e5e961f7a842bda9409d", true);
-      xhttp.setRequestHeader("Accept", "application/xml");
+      xhttp.open("GET", "https://api.elsevier.com/content/abstract/citation-count?doi=10.1073%2Fpnas.1704856114&apiKey=7f59af901d2d86f78a1fd60c1bf9426a", true);
+      xhttp.setRequestHeader("Accept", "application/json");
       xhttp.send();
-      </script> -->
+      </script>
     <!-- Loading the right tab from external or when reloading or when clicking on links -->
     <script>
       // Javascript to enable link to tab
