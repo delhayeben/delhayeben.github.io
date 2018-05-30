@@ -339,6 +339,10 @@
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
+               if(doi_list[i].descr!=null) {
+                 textphrase[idx]+= "<small><i>" + doi_list[i].descr +"</i></small><br>"
+               }
+
                document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
                _altmetric_embed_init();
              }
