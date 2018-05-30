@@ -79,7 +79,7 @@
           <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
               <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-8">
                   <h3> About me </h3>
                   <div class="pull-left">
                     <span style="border:20px solid white">
@@ -102,7 +102,7 @@
                   </p>
 
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                   <div class="well well-sm">
                     <h3>Recent news</h3>
                     <p id="recent_news"> This sentence should be replaced by the 10 first elements of news list, if not clear cache/cookies for this website.</p>
@@ -116,7 +116,7 @@
             </div>
             <div id="publi" class="tab-pane fade">
               <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-9">
                   <h3>Publications</h3>
                   <h4>Coming soon...</h4>
                   <ol>
@@ -132,7 +132,7 @@
                   <!-- <h4>Conferences / Proceedings</h4>
                   TBD -->
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-3">
                   <div class="well well-sm">
                     LINKS:
                     <ul>
@@ -340,7 +340,7 @@
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
                if(doi_list[i].descr!=null) {
-                 textphrase[idx]+= "<small><b> &rArr;" + doi_list[i].descr +"</b></small><br>"
+                 textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
                }
 
                document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
