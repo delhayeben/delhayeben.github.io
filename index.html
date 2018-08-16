@@ -43,7 +43,7 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <main role="main" class="container">
       <div class="well well-lg">
         <div class="row">
            <div class="col-sm-2">
@@ -86,17 +86,20 @@
                       <img class="img-rounded" width="120" src="media/me.jpg" alt="me" />
                     </span>
                   </div>
-
-                  <p>I am currently a Post-Doctoral scholar at the <a href="http://bensmaialab.org/">Bensmaia Lab</a> at the
-                    <a href="https://www.uchicago.edu/">University of Chicago</a>.
-                  </p>
-                  <p>I graduated as a Electro-mechanical engineer from <a href="https://uclouvain.be/">Université catholique de Louvain</a>
+                      <p>My research aims at understanding how tactile receptors and their associated nerve fibers encode information about contacted objects,
+                     and how the brain uses these signals to guide dexterous manipulation.
+                      Approaches include precise measurements of the skin response during object interactions, analysis and modeling of tactile afferent responses,
+                      and quantification of sensory outcomes. An important component of his work is the application of these insights towards the development of algorithms
+                       to electrically stimulate the nerve to restore somatosensory feedback in bionic hands.</p>
+                    <p> Starting September 1st, 2018, I will be a FSR Postdoctoral Fellow at the <a href="www.uclouvain.be">Université catholique de Louvain</a> (Belgium).</p>
+                   <p>I graduated as a Electro-mechanical engineer from <a href="https://uclouvain.be/">Université catholique de Louvain</a>
                     (BS 2007, MS 2009)
                     and I received a PhD in applied science (2014) from the same university for my work entitled
                     "Skin mechanics involved in dynamic touch", this work was co-supervised by <a href="https://uclouvain.be/jean-louis.thonnard">Jean-Louis Thonnard</a> and
-                    <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.
-                  </p>
-                  <p>My research interests include neuroprosthetics, haptics and neuroscience in the context of touch and sensory-motor control.</p>
+                    <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.</p>
+                    <p> During 2015-2018, I was a Post-Doctoral scholar  at the
+                    <a href="https://www.uchicago.edu/">University of Chicago</a>, working with <a href="http://bensmaialab.org/">Sliman Bensmaia</a>.</p>
+
                   <p>During my free time, I like running (see <a href="#news" onclick="LoadRunning();return false">Running section</a>),
                     my favorite distances are half-marathon (1:23:40) and marathon (3:08:52).
                   </p>
@@ -222,7 +225,12 @@
         <!-- column -->
       </div>
       <!-- row -->
-    </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted pull-right">&copy; Copyleft Benoit Delhaye 2018.</span>
+      </div>
+    </footer>
     <!-- container -->
     <!-- FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -314,6 +322,7 @@
            xhttp[i].onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
                var obj = JSON.parse(this.responseText);
+               console.log(obj)
                var idx = doi_list.length-1-i;
                textphrase[idx]= "<li>";
                if(doi_list[i].opt!=null & doi_list[i].opt=="cofirst") {
