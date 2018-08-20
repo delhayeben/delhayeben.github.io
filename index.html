@@ -319,7 +319,6 @@
            xhttp[i].onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
                var obj = JSON.parse(this.responseText);
-               console.log(obj)
                var idx = doi_list.length-1-i;
                textphrase[idx]= "<li>";
                if(doi_list[i].opt!=null & doi_list[i].opt=="cofirst") {
@@ -343,7 +342,9 @@
                if(cofirst) {textphrase[idx]+=" (* = equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
-               textphrase[idx]+= "<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>" + "<br>";
+               var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>" + "<br>";
+               console.log(localt)
+               textphrase[idx]+= localt
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
                if(doi_list[i].descr!=null) {
