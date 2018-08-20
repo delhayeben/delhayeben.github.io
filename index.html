@@ -342,15 +342,12 @@
                if(cofirst) {textphrase[idx]+=" (* = equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
-               var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>" + "<br>";
-               console.log(localt)
-               textphrase[idx]+= localt
+               var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>";
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
                if(doi_list[i].descr!=null) {
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
                }
-
                document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
                _altmetric_embed_init();
              }
