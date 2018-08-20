@@ -3,6 +3,7 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18156303-3"></script>
+    <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -51,8 +52,8 @@
            </div>
            <div class="col-sm-8">
               <h2>Benoit Delhaye, PhD <br>
-                 <small>Postdoc Scholar<br>
-                 University of Chicago</small>
+                 <small>FSR Fellow<br>
+                 Université catholique de Louvain</small>
               </h2>
            </div>
            <div class="col-sm-2">
@@ -342,6 +343,7 @@
                if(cofirst) {textphrase[idx]+=" (* = equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+               textphrase[idx]+= "<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>" + "<br>";
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
 
                if(doi_list[i].descr!=null) {
