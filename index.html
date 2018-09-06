@@ -91,7 +91,8 @@
                       Approaches include precise measurements of the skin response during object interactions, analysis and modeling of tactile afferent responses,
                       and quantification of sensory outcomes. An important component of my work is the application of these insights towards the development of algorithms
                        to electrically stimulate the nerve to restore somatosensory feedback in bionic hands.</p>
-                    <p> Starting September 1st, 2018, I will be a FSR Postdoctoral Fellow at the <a href="www.uclouvain.be">Université catholique de Louvain</a> (Belgium).</p>
+                    <p> Since September 1st, 2018, I am a FSR Postdoctoral Fellow at the <a href="www.uclouvain.be">Université catholique de Louvain</a> (Belgium), working with
+                    <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.</p>
                    <p>I graduated as a Electro-mechanical engineer from <a href="https://uclouvain.be/">Université catholique de Louvain</a>
                     (BS 2007, MS 2009)
                     and I received a PhD in applied science (2014) from the same university for my work entitled
@@ -343,7 +344,8 @@
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>";
-               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>" + "<br>";
+               //textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
+               textphrase[idx]+="<br>";
 
                if(doi_list[i].descr!=null) {
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
@@ -361,19 +363,6 @@
          console.log("Error: " + error.code);
       });
     </script>
-    <!-- citation count scopus -->
-    <script>
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          //document.getElementById("cit_count").innerHTML =this.responseText;
-          console.log(this.responseText);
-        }
-      };
-      xhttp.open("GET", "https://api.elsevier.com/content/abstract/citation-count?doi=10.1073%2Fpnas.1704856114&apiKey=c7b7f8c16a779305ea928b2f5606035d", true);
-      xhttp.setRequestHeader("Accept", "application/json");
-      xhttp.send();
-      </script>
     <!-- Loading the right tab from external or when reloading or when clicking on links -->
     <script>
       // Javascript to enable link to tab
