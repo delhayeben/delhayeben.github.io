@@ -316,7 +316,7 @@
                } else {
                 var cofirst=0;
                }
-               //textphrase[idx]+=JSON.stringify(obj);
+               //console.log(obj);
                for (key in obj.author) {
                  var me = obj.author[key].family == "Delhaye";
                  if(me) {textphrase[idx]+="<u><b>";}
@@ -331,7 +331,13 @@
                textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")"
                if(cofirst) {textphrase[idx]+=" (* = equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
-               textphrase[idx]+= obj["container-title"] + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+               if (obj["container-title"] == "") {
+                var journal=obj.institution.name;
+               } else {
+                var journal=obj["container-title"];
+               }
+
+               textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
                var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>";
                //textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
                textphrase[idx]+="<br>";
