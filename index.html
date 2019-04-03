@@ -333,7 +333,7 @@
 
                textphrase[idx]=textphrase[idx].slice(0,-2);
                textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")"
-               if(cofirst) {textphrase[idx]+=" (* = equal contribution)";}
+               if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                if (obj["container-title"] == "") {
                 var journal=obj.institution.name;
