@@ -104,7 +104,6 @@
                   <p>During my free time, I like running (see <a href="#news" onclick="LoadRunning();return false">Running section</a>),
                     my favorite distances are half-marathon (1:23:40) and marathon (3:08:52).
                   </p>
-
                 </div>
                 <div class="col-sm-4">
                   <div class="well well-sm">
@@ -219,7 +218,7 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted pull-right">&copy; Copyleft Benoit Delhaye 2019.</span>
+        <span class="text-muted pull-right">&copy; Copyleft <a href="delhayeben.github.io">Benoit Delhaye</a> 2019.</span>
       </div>
     </footer>
     <!-- container -->
@@ -332,7 +331,9 @@
                }
 
                textphrase[idx]=textphrase[idx].slice(0,-2);
-               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")"
+               //var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";
+               //console.log(localt);
+               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")";
                if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                if (obj["container-title"] == "") {
@@ -342,7 +343,8 @@
                }
 
                textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
-               var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-legend=\"never\" data-style=\"small_rectangle\"></span>";
+
+
                //textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
                textphrase[idx]+="<br>";
 
@@ -381,3 +383,5 @@
     </script>
   </body>
 </html>
+
+
