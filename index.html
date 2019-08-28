@@ -345,7 +345,7 @@
                textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
 
 
-               //textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
+               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
                textphrase[idx]+="<br>";
 
                if(doi_list[i].descr!=null) {
