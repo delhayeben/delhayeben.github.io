@@ -3,7 +3,7 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18156303-3"></script>
-    <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+    <!-- <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script> -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -117,14 +117,14 @@
               <div class="row">
                 <div class="col-sm-9">
                   <div class="well well-sm">
-                    <!-- <h4>Coming soon</h4>
+                    <h4>Coming soon</h4>
                     <ol>
-                      <li><b><u>Delhaye BP</u></b>, O’Donnell MK, Lieber JD, McLellan KR, & Bensmaia SJ (2019, in press)<br>
-                        <i><a>Feeling fooled: texture contaminates the neural code for tactile speed</a></i>.<br>
-                        PLOS Biology.<br>
+                      <li><b><u>Delhaye BP</u></b>, Jarocka E, Barrea A, Thonnard J-L, Edin BB, & Lefevre P (2021, in press)<br>
+                        <i><a>High-resolution imaging of skin deformation shows that afferents from human fingertips signal slip onset. </a></i>.<br>
+                        eLife.<br>
                         </li>
                     </ol>
-                    -->
+
                   </div>
                   <div class="well well-sm">
                     <h4>Published articles</h4>
@@ -331,7 +331,6 @@
                }
 
                textphrase[idx]=textphrase[idx].slice(0,-2);
-               //var localt="<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";
                //console.log(localt);
                textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")";
                if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
@@ -346,6 +345,7 @@
 
 
                textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
+               /*textphrase[idx]+= "<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";*/
                textphrase[idx]+="<br>";
 
                if(doi_list[i].descr!=null) {
