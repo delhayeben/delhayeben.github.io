@@ -358,8 +358,9 @@
                _altmetric_embed_init();
              }
            };
-           xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
-           xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
+           xhttp[i].open("GET", "https://doi.crossref.org/search/doi?pid=delhayeben@gmail.com&format=json&doi="+doi_list[i].doi,true);
+           //xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
+           //xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
            xhttp[i].send();
          })(i);    // <---- (the i variable might be omitted if it's not needed)
        }
