@@ -116,7 +116,7 @@
             <div id="publi" class="tab-pane fade">
               <div class="row">
                 <div class="col-sm-9">
-                  <div class="well well-sm">
+                  <!-- <div class="well well-sm">
                     <h4>Coming soon</h4>
                     <ol>
                       <li><b><u>Delhaye BP*</u></b>, Schiltz F*, Barrea A, Thonnard J-L, Lefevre P (2021) (* = co-first authors, equal contribution).<br>
@@ -130,8 +130,11 @@
                       </li>
                     </ol>
 
-                  </div>
+                  </div> -->
                   <div class="well well-sm">
+                    <h4>Preprints</h4>
+                    <p id="preprint_list"> This sentence should be replaced by the full publication list, if not clear cache/cookies for this website.</p>
+                    <br>
                     <h4>Published articles</h4>
                     <p id="publi_list"> This sentence should be replaced by the full publication list, if not clear cache/cookies for this website.</p>
                   </div>
@@ -208,7 +211,7 @@
               <div class="well well-sm">
                 <p><b>IONS - COSY</b> (secondary address)</p>
                 <p>&#9993; <span style="display: inline-block;vertical-align: top"> Avenue Mounier 53/B1.53.02 <br> 1200 Woluwe-Saint-Lambert <br> Belgium </span></p>
-                <p>&#128682; Pasteur (53) 02.0841 (second floor)</p>
+                <p>&#128682; Pasteur (53) 02.1046 (second floor)</p>
                 <p>&#9742; +32 2 764 55 19</p>
               </div>
             </div>
@@ -310,6 +313,7 @@
       ref.on("value", function(snapshot) {
         var doi_list=snapshot.val();
         var textphrase=[];
+        var preep=[]; var published=[];
         var xhttp =[];
        for (i = 0; i < doi_list.length; i++) {
          (function(i) {    // <--- the catch
@@ -341,9 +345,14 @@
                if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
                if (obj["container-title"] == "") {
-                var journal=obj.institution.name;
+                var journal=obj.institution[0].name;
+                preep[idx]=idx;
+                published[idx]=[];
+                console.log(obj)
                } else {
                 var journal=obj["container-title"];
+                preep[idx]=[];
+                published[idx]=idx;
                }
 
                textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
@@ -356,7 +365,11 @@
                if(doi_list[i].descr!=null) {
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
                }
-               document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.join("") + "</ol>";
+
+               document.getElementById("preprint_list").innerHTML = "<ol>" + textphrase.filter((x,i) => preep.includes(i)).join("") + "</ol>";
+               document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
+
+               console.log();
                _altmetric_embed_init();
              }
            };
