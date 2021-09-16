@@ -58,7 +58,7 @@
            </div>
            <div class="col-sm-2">
               <a href="https://twitter.com/delhayeben" class="twitter-follow-button" data-show-count="false">Twitter</a>
-              <a style="display:inline-block;background-color:#FC4C02;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/3833356/badge' target="_clean" > Follow me</a>
+              <a style="display:inline-block;background-color:#FC4C02;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('http://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/3833356' target="_clean" > Follow me</a>
            </div>
         </div>
       </div>
@@ -116,21 +116,17 @@
             <div id="publi" class="tab-pane fade">
               <div class="row">
                 <div class="col-sm-9">
-                  <!-- <div class="well well-sm">
+                  <div class="well well-sm">
                     <h4>Coming soon</h4>
                     <ol>
-                      <li><b><u>Delhaye BP*</u></b>, Schiltz F*, Barrea A, Thonnard J-L, Lefevre P (2021) (* = co-first authors, equal contribution).<br>
-                        <i><a href="https://doi.org/10.1101/2021.07.20.453037">Measuring fingerpad deformation during active object manipulation.</a></i><br>
-                        bioRxiv.
-                        <br>
-                        <li>Schiltz F*, <b><u>Delhaye BP*</u></b>, Crevecoeur F, Thonnard J-L, Lefevre P (2021) (* = co-first authors, equal contribution).<br>
-                        <i><a href="https://doi.org/10.1101/2021.07.20.452911">Fast grip force adaptation to friction relies on localized fingerpad strains.</a></i><br>
-                        bioRxiv.
+                      <li>Schiltz F*, <b><u>Delhaye BP*</u></b>, Thonnard J-L, Lefevre P (2021) (* = co-first authors, equal contribution).<br>
+                        <i><a >Grip Force is adjusted to maintain a constant level of partial slip during object manipulation.</a></i><br>
+                        In preparation.
                         <br>
                       </li>
                     </ol>
 
-                  </div> -->
+                  </div>
                   <div class="well well-sm">
                     <h4>Preprints</h4>
                     <p id="preprint_list"> This sentence should be replaced by the full publication list, if not clear cache/cookies for this website.</p>
@@ -334,7 +330,7 @@
                  if(me) {textphrase[idx]+="<u><b>";}
                  textphrase[idx]+= obj.author[key].family + " ";
                  textphrase[idx]+= obj.author[key].given.match(/\b\w/g).join("");
-                 if((key == 0 | me) & cofirst) {textphrase[idx]+="*";}
+                 if((key == 0 | key == 1 | me) & cofirst) {textphrase[idx]+="*";}
                  if(me) {textphrase[idx]+="</b></u>";}
                  textphrase[idx]+= ", ";
                }
