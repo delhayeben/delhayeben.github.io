@@ -121,7 +121,12 @@
                     <ol>
                       <li>Schiltz F*, <b><u>Delhaye BP*</u></b>, Thonnard J-L, Lefevre P (2021) (* = co-first authors, equal contribution).<br>
                         <i><a >Grip Force is adjusted to maintain a constant level of partial slip during object manipulation.</a></i><br>
-                        In preparation.
+                        Submitted.
+                        <br>
+                      </li>
+                      <li><b><u>Delhaye BP</u></b>, et al.<br>
+                        <i><a>Mechanics of grip force adjustment during active manipulation of objects with an off-centered mass.</a></i><br>
+                        In prep.
                         <br>
                       </li>
                     </ol>
@@ -363,8 +368,10 @@
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
                }
 
-               document.getElementById("preprint_list").innerHTML = "<ol>" + textphrase.filter((x,i) => preep.includes(i)).join("") + "</ol>";
-               document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
+              preeptext = textphrase.filter((x,i) => preep.includes(i)).join("");
+              if (preeptext == "") {preeptext="None at the moment."}
+              document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
+              document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
 
                console.log();
                _altmetric_embed_init();
