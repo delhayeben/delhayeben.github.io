@@ -3,7 +3,7 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18156303-3"></script>
-    <!-- <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script> -->
+    <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -360,9 +360,9 @@
                textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
 
 
-               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>";
-               /*textphrase[idx]+= "<span class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";*/
-               textphrase[idx]+="<br>";
+               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>&nbsp;";
+               textphrase[idx]+= "<span style=\"display:inline;\" class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";
+               //textphrase[idx]+="<br>";
 
                if(doi_list[i].descr!=null) {
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
@@ -373,8 +373,9 @@
               document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
               document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
 
-               console.log();
-               _altmetric_embed_init();
+              //console.log(textphrase[idx]);
+              _altmetric_embed_init();
+              window.__dimensions_embed.addBadges()
              }
            };
            xhttp[i].open("GET", "https://api.crossref.org/works/"+doi_list[i].doi,true);
