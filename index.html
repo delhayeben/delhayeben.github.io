@@ -41,6 +41,9 @@
       border: 1px solid #e3e3e3;
       border-radius: 4px;
       }
+      .lu.ben {
+        list-style: none;
+      }
     </style>
   </head>
   <body>
@@ -80,34 +83,34 @@
             <div id="home" class="tab-pane fade in active">
               <div class="row">
                 <div class="col-sm-8">
-                  <h3> About me </h3>
-                  <div class="pull-left">
-                    <span style="border:20px solid white">
-                      <img class="img-rounded" width="120" src="media/me.jpg" alt="me" />
+                  <h3>Recent news</h3>
+                    <p id="recent_news"> This sentence should be replaced by the 10 first elements of news list, if not clear cache/cookies for this website.</p>
+                    <p><a href="#news" onclick="LoadNews();return false"> See all </a></p>
+                </div>
+                <div class="col-sm-4">
+                  <div class="well well-sm">
+
+                  <div class="pull-right">
+                    <span style="border:5px solid white">
+                      <img class="img-rounded" width="100" src="media/me.jpg" alt="me" />
                     </span>
                   </div>
+                  <h3> About me </h3>
                       <p>My research aims at understanding how tactile receptors and their associated nerve fibers encode information about contacted objects,
                      and how the brain uses these signals to guide dexterous manipulation.
                       Approaches include precise measurements of the skin response during object interactions, analysis and modeling of tactile afferent responses,
                       and quantification of sensory outcomes. An important component of my work is the application of these insights towards the development of algorithms
                        to electrically stimulate the nerve to restore somatosensory feedback in bionic hands.</p>
                     <p> Since November 1st, 2022, I am a FRS-F.N.R.S. research collaborator at the <a href="www.uclouvain.be">Université catholique de Louvain</a> (Belgium)</p>
-                   <p>I graduated as a Electro-mechanical engineer from <a href="https://uclouvain.be/">Université catholique de Louvain</a>
+                   <!-- <p>I graduated as a Electro-mechanical engineer from <a href="https://uclouvain.be/">Université catholique de Louvain</a>
                     (BS 2007, MS 2009) and I received a PhD in applied science (2014) from the same university for my work entitled
                     "Skin mechanics involved in dynamic touch", this work was co-supervised by <a href="https://uclouvain.be/jean-louis.thonnard">Jean-Louis Thonnard</a> and
                     <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.
                     During 2015-2018, I was a Post-Doctoral scholar  at the <a href="https://www.uchicago.edu/">University of Chicago</a>, working with <a href="http://bensmaialab.org/">Sliman Bensmaia</a>.
                     During Sept 2018-Oct 2022, I was a FSR and then an FRS-F.N.R.S Postdoctoral Fellow at UCLouvain, working with
-                    <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.</p>
+                    <a href="https://perso.uclouvain.be/philippe.lefevre/">Phillipe Lefèvre</a>.</p> -->
 
-                  <p>During my free time, I like running (see <a href="#news" onclick="LoadRunning();return false">Running section</a>).
-                  </p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="well well-sm">
-                    <h3>Recent news</h3>
-                    <p id="recent_news"> This sentence should be replaced by the 10 first elements of news list, if not clear cache/cookies for this website.</p>
-                    <p><a href="#news" onclick="LoadNews();return false"> See all </a></p>
+                  <p>During my free time, I like running (see <a href="#news" onclick="LoadRunning();return false">Running section</a>).</p>
                   </div>
                 </div>
               </div>
@@ -272,8 +275,8 @@
           }
         }
 
-        document.getElementById("recent_news").innerHTML = textouput.slice(0, 4).join("");
-        document.getElementById("news_list").innerHTML = "<ul>" + textouput.join("") + "</ul>";
+        document.getElementById("recent_news").innerHTML = textouput.slice(0, 6).join("");
+        document.getElementById("news_list").innerHTML = textouput.join("");
 
       }, function (error) {
          console.log("Error: " + error.code);
