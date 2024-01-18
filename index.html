@@ -341,18 +341,25 @@
                  if((key == 0 | key == 1 | me) & cofirst) {textphrase[idx]+="*";}
                  if(me) {textphrase[idx]+="</b></u>";}
                  textphrase[idx]+= ", ";
+                 /*console.log(obj.author[key].family)*/
                }
 
                textphrase[idx]=textphrase[idx].slice(0,-2);
+
                //console.log(localt);
                textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")";
+
                if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
                textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
+               console.log(obj);
                if (obj["container-title"] == "") {
-                var journal=obj.institution[0].name;
+                if (obj.institution === undefined) {
+                  var journal=obj["group-title"];
+                } else {
+                  var journal=obj.institution[0].name;
+                };
                 preep[idx]=idx;
                 published[idx]=[];
-                console.log(obj)
                } else {
                 var journal=obj["container-title"];
                 preep[idx]=[];
@@ -369,21 +376,26 @@
                if(doi_list[i].descr!=null) {
                  textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
                }
-
               preeptext = textphrase.filter((x,i) => preep.includes(i)).join("");
               if (preeptext == "") {preeptext="None at the moment."}
               document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
               document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
 
-              //console.log(textphrase[idx]);
+
               _altmetric_embed_init();
-              window.__dimensions_embed.addBadges()
+              window.__dimensions_embed.addBadges();
              }
            };
+          if (doi_list[i]=== undefined) {
+            /*console.log("ici")*/
+            return 0;
+          };
+
            xhttp[i].open("GET", "https://api.crossref.org/works/"+doi_list[i].doi,true);
            //xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
            //xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
            xhttp[i].send();
+
          })(i);    // <---- (the i variable might be omitted if it's not needed)
        }
       }, function (error) {
