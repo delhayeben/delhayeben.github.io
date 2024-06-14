@@ -313,91 +313,193 @@
         return (val == null) ? "" : before+val+after
       }
 
+      function obsKeysToString(o, k, sep) {
+       return o.map(obj => obj[k]).filter(v => v).join(sep);
+      }
+
       var ref = firebase.database().ref('doc/publi');
       ref.on("value", function(snapshot) {
-        var doi_list=snapshot.val();
+        var doi_list=snapshot.val().filter(v => v);
         var textphrase=[];
-        var preep=[]; var published=[];
+        var preep=[];
+        var published=[];
         var xhttp =[];
-       for (i = 0; i < doi_list.length; i++) {
-         (function(i) {    // <--- the catch
-           xhttp[i]= new XMLHttpRequest();
-           xhttp[i].onreadystatechange = function() {
-             if (this.readyState == 4 && this.status == 200) {
-               var obj = JSON.parse(this.responseText);
-               obj=obj.message;
-               var idx = doi_list.length-1-i;
-               textphrase[idx]= "<li>";
-               if(doi_list[i].opt!=null & doi_list[i].opt=="cofirst") {
-                var cofirst=1;
-               } else {
-                var cofirst=0;
-               }
-               for (key in obj.author) {
-                 var me = obj.author[key].family == "Delhaye";
-                 if(me) {textphrase[idx]+="<u><b>";}
-                 textphrase[idx]+= obj.author[key].family + " ";
-                 textphrase[idx]+= obj.author[key].given.match(/\b\w/g).join("");
-                 if((key == 0 | key == 1 | me) & cofirst) {textphrase[idx]+="*";}
-                 if(me) {textphrase[idx]+="</b></u>";}
-                 textphrase[idx]+= ", ";
-                 /*console.log(obj.author[key].family)*/
-               }
 
-               textphrase[idx]=textphrase[idx].slice(0,-2);
+        //console.log(doi_list)
 
-               //console.log(localt);
-               textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")";
+        batch_size=doi_list.length;
+        //dois_s = doi_list.map(o => o.doi).join(',doi:');
+        dois_s = 'doi:' + obsKeysToString(doi_list,'doi',',doi:');
+        //console.log(dois_s)
 
-               if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
-               textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
-               console.log(obj);
-               if (obj["container-title"] == "") {
-                if (obj.institution === undefined) {
-                  var journal=obj["group-title"];
-                } else {
-                  var journal=obj.institution[0].name;
-                };
-                preep[idx]=idx;
-                published[idx]=[];
-               } else {
-                var journal=obj["container-title"];
-                preep[idx]=[];
-                published[idx]=idx;
-               }
+        xhp= new XMLHttpRequest();
+        xhp.onreadystatechange = function() {
+          var obj = JSON.parse(this.responseText);
+          var doiitems=obj.message.items;
 
-               textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+          for (i = 0; i < doiitems.length; i++) {
+            var idx_list=doiitems.length-i-1;
+            textphrase[i]= "<li>";
+            if(doi_list[idx_list].opt!=null & doi_list[idx_list].opt=="cofirst") {
+              var cofirst=1;
+            } else {
+              var cofirst=0;
+            }
+
+            var idx;
+            for (j=0; j< doiitems.length; j++) {
+              if(doiitems[j].DOI.toUpperCase() === doi_list[idx_list].doi.toUpperCase()) {
+                idx=j;
+                break;
+              }
+            }
 
 
-               textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>&nbsp;";
-               textphrase[idx]+= "<span style=\"display:inline;\" class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";
-               //textphrase[idx]+="<br>";
-
-               if(doi_list[i].descr!=null) {
-                 textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
-               }
-              preeptext = textphrase.filter((x,i) => preep.includes(i)).join("");
-              if (preeptext == "") {preeptext="None at the moment."}
-              document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
-              document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
 
 
-              _altmetric_embed_init();
-              window.__dimensions_embed.addBadges();
-             }
-           };
-          if (doi_list[i]=== undefined) {
-            /*console.log("ici")*/
-            return 0;
-          };
 
-           xhttp[i].open("GET", "https://api.crossref.org/works/"+doi_list[i].doi,true);
-           //xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
-           //xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
-           xhttp[i].send();
+            for (key in doiitems[idx].author) {
+              var me = doiitems[idx].author[key].family == "Delhaye";
+              if(me) {textphrase[i]+="<u><b>";}
+              textphrase[i]+= doiitems[idx].author[key].family + " ";
+              textphrase[i]+= doiitems[idx].author[key].given.match(/\b\w/g).join("");
+              if((key == 0 | key == 1 | me) & cofirst) {textphrase[i]+="*";}
+              if(me) {textphrase[i]+="</b></u>";}
+              textphrase[i]+= ", ";
+              /*console.log(doiitems[idx].author[key].family)*/
+            }
 
-         })(i);    // <---- (the i variable might be omitted if it's not needed)
-       }
+            textphrase[i]=textphrase[i].slice(0,-2);
+
+            /*console.log(textphrase);*/
+            textphrase[i]+= " ("+ doiitems[idx]["issued"]["date-parts"][0][0] + ")";
+
+            if(cofirst) {textphrase[i]+=" (* = co-first authors, equal contribution)";}
+            textphrase[i]+= ".<br> <em><a target=\"_blank\" href=\"" + doiitems[idx].URL + "\">" + doiitems[idx].title + "</a></em>.<br>";
+            console.log(doiitems[idx]);
+            if (doiitems[idx]["container-title"] === undefined) {
+             if (doiitems[idx].publisher === undefined) {
+               var journal=doiitems[idx]["group-title"];
+             } else {
+               var journal=doiitems[idx].publisher;
+             };
+             preep[i]=i;
+             published[i]=[];
+            } else {
+             var journal=doiitems[idx]["container-title"];
+             preep[i]=[];
+             published[i]=i;
+            }
+
+            textphrase[i]+= journal + undef(doiitems[idx].volume,", ","") + undef(doiitems[idx].issue,"(",")") + undef(doiitems[idx].page,":","") + ". &nbsp;";
+
+
+            textphrase[i]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[idx_list].doi + "\" class=\"altmetric-embed\"></div>&nbsp;";
+            textphrase[i]+= "<span style=\"display:inline;\" class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[idx_list].doi + "\" data-style=\"small_rectangle\"></span>";
+            //textphrase[i]+="<br>";
+
+            if(doi_list[idx_list].descr!=null) {
+              textphrase[i]+= "<small><b> &rArr; " + doi_list[idx_list].descr +"</b></small><br>"
+            }
+          }
+
+          console.log(textphrase)
+          preeptext = textphrase.filter((x,i) => preep.includes(i)).join("");
+          if (preeptext == "") {preeptext="None at the moment."}
+          document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
+          document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
+
+          _altmetric_embed_init();
+          window.__dimensions_embed.addBadges();
+        }
+
+        xhp.open("GET", `https://api.crossref.org/works?filter=${dois_s}&rows=${batch_size}`,true);
+        xhp.send();
+
+
+
+
+
+
+       // for (i = 0; i < doi_list.length; i++) {
+       //   (function(i) {    // <--- the catch
+       //     xhttp[i]= new XMLHttpRequest();
+       //     xhttp[i].onreadystatechange = function() {
+       //       if (this.readyState == 4 && this.status == 200) {
+       //         var obj = JSON.parse(this.responseText);
+       //         obj=obj.message;
+       //         var idx = doi_list.length-1-i;
+       //         textphrase[idx]= "<li>";
+       //         if(doi_list[idx_list].opt!=null & doi_list[i].opt=="cofirst") {
+       //          var cofirst=1;
+       //         } else {
+       //          var cofirst=0;
+       //         }
+       //         for (key in obj.author) {
+       //           var me = obj.author[key].family == "Delhaye";
+       //           if(me) {textphrase[idx]+="<u><b>";}
+       //           textphrase[idx]+= obj.author[key].family + " ";
+       //           textphrase[idx]+= obj.author[key].given.match(/\b\w/g).join("");
+       //           if((key == 0 | key == 1 | me) & cofirst) {textphrase[idx]+="*";}
+       //           if(me) {textphrase[idx]+="</b></u>";}
+       //           textphrase[idx]+= ", ";
+       //           /*console.log(obj.author[key].family)*/
+       //         }
+
+       //         textphrase[idx]=textphrase[idx].slice(0,-2);
+
+       //         //console.log(localt);
+       //         textphrase[idx]+= " ("+ obj["issued"]["date-parts"][0][0] + ")";
+
+       //         if(cofirst) {textphrase[idx]+=" (* = co-first authors, equal contribution)";}
+       //         textphrase[idx]+= ".<br> <em><a target=\"_blank\" href=\"" + obj.URL + "\">" + obj.title + "</a></em>.<br>";
+       //         console.log(obj);
+       //         if (obj["container-title"] == "") {
+       //          if (obj.institution === undefined) {
+       //            var journal=obj["group-title"];
+       //          } else {
+       //            var journal=obj.institution[0].name;
+       //          };
+       //          preep[idx]=idx;
+       //          published[idx]=[];
+       //         } else {
+       //          var journal=obj["container-title"];
+       //          preep[idx]=[];
+       //          published[idx]=idx;
+       //         }
+
+       //         textphrase[idx]+= journal + undef(obj.volume,", ","") + undef(obj.issue,"(",")") + undef(obj.page,":","") + ". &nbsp;";
+
+
+       //         textphrase[idx]+= "<div style=\"display: inline\" data-doi=\"" + doi_list[i].doi + "\" class=\"altmetric-embed\"></div>&nbsp;";
+       //         textphrase[idx]+= "<span style=\"display:inline;\" class=\"__dimensions_badge_embed__\" data-doi=\"" + doi_list[i].doi + "\" data-style=\"small_rectangle\"></span>";
+       //         //textphrase[idx]+="<br>";
+
+       //         if(doi_list[i].descr!=null) {
+       //           textphrase[idx]+= "<small><b> &rArr; " + doi_list[i].descr +"</b></small><br>"
+       //         }
+       //        preeptext = textphrase.filter((x,i) => preep.includes(i)).join("");
+       //        if (preeptext == "") {preeptext="None at the moment."}
+       //        document.getElementById("preprint_list").innerHTML = "<ol>" + preeptext + "</ol>";
+       //        document.getElementById("publi_list").innerHTML = "<ol>" + textphrase.filter((x,i) => published.includes(i)).join("") + "</ol>";
+
+
+       //        _altmetric_embed_init();
+       //        window.__dimensions_embed.addBadges();
+       //       }
+       //     };
+       //    if (doi_list[i]=== undefined) {
+       //      /*console.log("ici")*/
+       //      return 0;
+       //    };
+
+       //     xhttp[i].open("GET", "https://api.crossref.org/works/"+doi_list[i].doi,true);
+       //     //xhttp[i].open("GET", "https://doi.org/"+doi_list[i].doi,true);
+       //     //xhttp[i].setRequestHeader("Accept", "application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0");
+       //     xhttp[i].send();
+
+       //   })(i);    // <---- (the i variable might be omitted if it's not needed)
+       // }
       }, function (error) {
          console.log("Error: " + error.code);
       });
