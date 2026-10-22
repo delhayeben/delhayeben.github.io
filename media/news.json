@@ -1,0 +1,206 @@
+{
+  "doc": {
+    "news": [
+      {
+        "date": "2014-09-24",
+        "content": "First paper on fingertip mechanics is out",
+        "opt": [
+          "Dynamics of fingertip contact during the onset of tangential slip. Benoit Delhaye, Philippe Lefèvre, and Jean-Louis Thonnard",
+          "J. R. Soc. Interface November 6, 2014 11 20140698"
+        ]
+      },
+      {
+        "date": "2014-10-09",
+        "content": "My thesis public defense will take place on October 31,2014 at 5.00pm at BARB94 (LLN).  Everyone’s welcome !"
+      },
+      {
+        "date": "2014-10-22",
+        "content": "A mini-symposium on touch will be organized on October 31 afternoon before my PhD defense ! More info HERE.  Everyone’s welcome !"
+      },
+      {
+        "date": "2014-12-05",
+        "content": "I will be moving to the US, in Chicago on Jan 9 ,2015. There, I will start a post-doc scholar at the Somatosensory Research Lab (hold by Prof. Sliman Bensmaia)."
+      },
+      {
+        "date": "2015-01-09",
+        "content": "I just arrived in Chicago !"
+      },
+      {
+        "date": "2015-01-17",
+        "content": "Thesis submitted to the Eurohaptics 2014 best thesis award !"
+      },
+      {
+        "date": "2015-04-17",
+        "content": "Strain paper submitted to Journal of the Royal Society Interface.  Finger crossed..."
+      },
+      {
+        "date": "2015-10-21",
+        "content": "SFN poster presentations:",
+        "opt": [
+          "Delhaye BP, Schluter EW, Johannes MS, Katyal KD, Tenore FV, Bensmaia SJ. What can bionic fingers tell us about objects? Extracting behaviorally relevant features from the output of sensors on prosthetic fingertips.",
+          "Delhaye BP, Saal HP, Rayhaun BC, Bensmaia SJ. A model that simulates the response of the somatosensory nerves to arbitrary spatio-temporal deformations of the skin of the hand.",
+          "Barrea A, Delhaye B, Lefèvre P, Thonnard JL. Perception of partial slips under tangential loading of the fingertip."
+        ]
+      },
+      {
+        "date": "2016-01-21",
+        "content": "Strain paper accepted for publication in Journal of the Royal Society Interface !"
+      },
+      {
+        "date": "2016-01-22",
+        "content": "\"Robo-Psychophysics: Extracting behaviorally relevant features from the output of sensors on a prosthetic finger\" submitted to IEEE on Haptics."
+      },
+      {
+        "date": "2016-02-17",
+        "content": "Strain paper is <a href=\"http://rsif.royalsocietypublishing.org/content/13/115/20150874\">online</a>"
+      },
+      {
+        "date": "2016-03-23",
+        "content": "Robo-psychophysics paper: minor rev !"
+      },
+      {
+        "date": "2016-05-18",
+        "content": "Robo-psychophysics paper: accepted !"
+      },
+      {
+        "date": "2016-07-28",
+        "content": "Our collaboration study with CASE Western about perceived intensity in artificial touch accepted in Science Translational Medecine !"
+      },
+      {
+        "date": "2016-08-24",
+        "content": "Robo-psychophysics paper online ! <a href=\"http://ieeexplore.ieee.org/document/7542177\">Check it out!</a>"
+      },
+      {
+        "date": "2016-10-17",
+        "content": "Modeling paper under revision in PNAS... finger crossed."
+      },
+      {
+        "date": "2016-10-25",
+        "content": "\"The Neural Basis of Perceived Intensity in Natural and Artificial Touch\" (Emily Graczyk, Matthew Schiefer, Hannes Saal, Benoit Delhaye, Sliman Bensmaia and Dustin Tyler) to appear tomorrow in Science Translational Medecine ! We will make the cover, wait for it !"
+      },
+      {
+        "date": "2016-10-26",
+        "content": "Our STM paper is out <a href=\"http://stm.sciencemag.org/content/8/362/362ra142\">check it</a> !",
+        "opt": "And it is in the news <a href=\"https://www.altmetric.com/details/13060691/news\">everywhere</a>!! Also check out the journal <a href=\"http://stm.sciencemag.org/content/scitransmed/8/362/F1.medium.gif\">cover</a> "
+      },
+      {
+        "date": "2016-11-01",
+        "content": "Our manifesto on neuroprostheses design has just been accepted !",
+        "opt": "Delhaye, B.P., Saal, H.P., Bensmaia, S.J. (in press). Key considerations in designing a somatosensory neuroprosthesis, Journal of Physiology – Paris."
+      },
+      {
+        "date": "2016-11-02",
+        "content": "The manifesto is online, <a href=\"http://www.sciencedirect.com/science/article/pii/S0928425716300237\">check it</a> !"
+      },
+      {
+        "date": "2016-11-09",
+        "content": "busy SFN this year:",
+        "opt": [
+          "BP Delhaye, AI Weber, SJ Bensmaia, Decoding motion speed from the responses of tactile afferents (poster).",
+          "A Barrea, E Jarocka, P Lefèvre, JL Thonnard, BB Edin, BP Delhaye, Human tactile afferent responses to skin strain patterns caused by fingertip shearing (poster).",
+          "SJ Bensmaia, T Callier, HP Saal, BP Delhaye The dynamics of neural signals about contact pressure - implications for bionic hands (talk).",
+          "AK Suresh, BP Delhaye, HP Saal, SJ Bensmaia. Coding of edge orientation in afferent responses of macaques (poster).",
+          "EL Graczyk, MA Schiefer, HP Saal, BP Delhaye, SJ Bensmaia, DJ Tyler. Fascicular organization affects tactile sensation evoked from peripheral nerve cuff stimulation (poster)."
+        ]
+      },
+      {
+        "date": "2016-11-29",
+        "content": "Model paper back from revision: reject but can re-submit (aka major rev)."
+      },
+      {
+        "date": "2017-03-19",
+        "content": "Workshop proposal \"Recent advances in modeling skin mechanics and tactile afferent responses\" submitted for Worldhaptics 2017 in Munich!"
+      },
+      {
+        "date": "2017-03-23",
+        "content": "Model re-submitted to PNAS after huge revisions ! Finger crossed."
+      },
+      {
+        "date": "2017-04-01",
+        "content": "WorldHaptics workshop accepted ! More info on the <a href=\"https://sites.google.com/sheffield.ac.uk/wh2017/\">dedicated website</a> !"
+      },
+      {
+        "date": "2017-05-01",
+        "content": " Model paper (TouchSim) accepted in PNAS pending minor revisions !!!!!! "
+      },
+      {
+        "date": "2017-06-06",
+        "content": " Worldhaptics 2017",
+        "opt": [
+          "workshop: \"Recent advances in modeling skin mechanics and tactile afferent responses\".",
+          "I'm talking about: \"TouchSim: Simulating tactile signals from the whole hand with millisecond precision\".",
+          "main conference: Finger Pad Mechanics During Dexterous Object Manipulation (Work in progress, poster). Allan Barrea, Benoit Delhaye, Philippe Lefèvre, Jean-Louis Thonnard."
+        ]
+      },
+      {
+        "date": "2017-06-09",
+        "content": " Worldhaptics 2017: best work in progress was awarded to Allan for his poster ! ",
+        "opt": "see: <a href=\"https://www.computer.org/csdl/trans/th/2017/03/08038914.pdf\">TOH editoral</a> and <a href=\"https://uclouvain.be/en/research-institutes/icteam/news/best-wip-award.html\">ICTEAM news</a>"
+      },
+      {
+        "date": "2017-06-26",
+        "content": "TouchSim, our tool to simulate tactile signals from the whole hand, is out in <a href=\"http://www.pnas.org/content/114/28/E5693\">PNAS</a>.",
+        "opt": [
+          "Simulating tactile signals from the whole hand with millisecond precision (2017), Hannes P. Saal*, Benoit P. Delhaye*, Brandon C. Rayhaun, and Sliman J. Bensmaia.",
+          "The code will be soon online on <a href=\"http://bensmaialab.org\">bensmaialab.org</a>"
+        ]
+      },
+      {
+        "date": "2017-06-27",
+        "content": "TouchSim code is online. Download it on <a href=\"http://bensmaialab.org/download/\">Bensmaia Lab</a> website."
+      },
+      {
+        "date": "2017-09-25",
+        "content": "Review back from Compr Phys: Lots of (good) comments."
+      },
+      {
+        "date": "2017-07-11",
+        "content": "TouchSim paper was highlighted in its <a href=\"http://www.pnas.org/content/114/28/7173.full#sec-4\"> PNAS issue </a>"
+      },
+      {
+        "date": "2017-07-31",
+        "content": "Review entitled \"Neural basis of touch and proprioception in primate cortex\" submitted to Comprehensive Physiology."
+      },
+      {
+        "date": "2017-09-25",
+        "content": "Review back from Comprehensive Physiol: Lots of (good) comments."
+      },
+      {
+        "date": "2017-10-02",
+        "content": "Going to Brussels to visit Jean-Louis Thonnard and Phillipe Lefèvre and for the PhD thesis Defense of Allan Barrea.",
+        "opt": "I'll give a talk about TouchSim as a part of a mini-symposium on  “Processing of somatosensory feedback for motor control ”."
+      },
+      {
+        "date": "2017-10-02",
+        "content": "Going to Brussels to visit Jean-Louis Thonnard and Phillipe Lefèvre and for the PhD thesis Defense of Allan Barrea.",
+        "opt": "I'll give a talk about TouchSim as a part of a mini-symposium on  “Processing of somatosensory feedback for motor control ”."
+      },
+      {
+        "date": "2017-10-20",
+        "content": "On Nov 30-Dec 1, I'll be visiting <a href=\"pruszynskilab.com\">Andrew Pruszynski</a> (University of Western Ontario, Canada).",
+        "opt": "I'll give a talk at the computational neuroscience seminar series"
+      },
+      {
+        "date": "2017-12-20",
+        "content": "Three papers under revision. Hopefully some Christmas good news coming soon."
+      },
+      {
+        "date": "2018-02-20",
+        "content": "Two minor revisions, one (second round) major revision. Quite good news! More soon."
+      },
+      {
+        "date": "2018-03-08",
+        "content": "\"Sensory adaptation to electrical stimulation of the somatosensory nerves\" accepted in JNE! More info soon."
+      },
+      {
+        "date": "2018-03-12",
+        "content": "I have been awarded \"meritorious service awards 2017\" from IEEE Transaction on Haptics for my work as a reviewer.",
+        "opt": "see <a href=\"https://www.computer.org/web/toh/meritorious\">here</a> (will be soon updated)."
+      },
+      {
+        "date": "2018-03-20",
+        "content": "New paper online! <a href=\"https://doi.org/10.1088/1741-2552/aab790\">link</a>."
+      }
+    ]
+  }
+}
